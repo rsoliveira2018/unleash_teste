@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+  unleash-proxy:
+    image: unleashorg/unleash-proxy
+    ports:
+      - '3303:3000'
+    environment:
+      UNLEASH_URL: 'http://unleash:4242/api'
+      UNLEASH_API_TOKEN: '*:default.253be494d5872c7756dbb955fcc3cb44e04ae7141613b0a3bac39602'
+      UNLEASH_PROXY_SECRETS: 'PROXY_SECRET'
+
+networks:
+  default:
+    external:
+      name: unleash-net
